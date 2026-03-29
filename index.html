@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Hub | Library Inventory</title>
+    <link rel="icon" href="assets/fulllogo.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+
+    <nav class="bg-blue-600 border-gray-200 dark:bg-gray-800 sticky top-0 z-40">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center space-x-3 text-white">
+                <img src="assets/logos/logo.png" class="h-8 rounded" alt="Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap">Smart Study Hub</span>
+            </a>
+            <div class="flex md:order-2 space-x-3">
+                <button id="themeToggle" class="text-white hover:bg-blue-700 dark:hover:bg-gray-700 rounded-lg p-2.5">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 text-white">
+                    <li><a href="index.html" class="block py-2 px-3 text-blue-200 underline">Home</a></li>
+                    <li><a href="src/pages/about.html" class="block py-2 px-3 hover:text-blue-200">About</a></li>
+                    <li><a href="src/pages/contact.html" class="block py-2 px-3 hover:text-blue-200">Contact</a></li>
+                    <li><a href="account/signin.html" class="block py-2 px-3 hover:text-blue-200">Sign In</a></li>
+                    <li><a href="account/signup.html" class="block py-2 px-3 hover:text-blue-200">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-blue-50 dark:bg-gray-800 py-10">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl dark:text-white">Library Inventory System</h1>
+            <p class="text-lg font-normal text-gray-500 dark:text-gray-400">Manage your collection with Advanced JS & Flowbite UI.</p>
+        </div>
+    </section>
+
+    <div class="max-w-screen-xl mx-auto p-6 flex flex-col md:flex-row gap-4 items-center">
+        <input type="text" id="searchInput" class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Search by title, author, or genre...">
+        
+        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="w-full md:w-auto text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-3">
+            + Add New Book
+        </button>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto px-6 flex flex-wrap gap-2 mb-6">
+        <button onclick="window.sortBy('title')" class="bg-gray-200 dark:bg-gray-700 dark:text-white px-4 py-2 rounded-lg text-sm">Sort by Title</button>
+        <button onclick="window.sortBy('quantity')" class="bg-gray-200 dark:bg-gray-700 dark:text-white px-4 py-2 rounded-lg text-sm">Sort by Qty</button>
+        <button onclick="window.filterTop()" class="bg-yellow-400 px-4 py-2 rounded-lg text-sm font-bold">⭐ Top Rated</button>
+    </div>
+
+    <div id="bookGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-xl mx-auto p-6">
+        </div>
+
+    <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex items-center justify-between p-4 border-b dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Book Details</h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 ml-auto" data-modal-toggle="crud-modal">✕</button>
+                </div>
+                <form id="bookForm" class="p-6 space-y-4">
+                    <input id="title" placeholder="Book Title" class="w-full p-2.5 rounded border dark:bg-gray-600 dark:text-white" required>
+                    <input id="author" placeholder="Author Name" class="w-full p-2.5 rounded border dark:bg-gray-600 dark:text-white" required>
+                    <input id="genre" placeholder="Genre" class="w-full p-2.5 rounded border dark:bg-gray-600 dark:text-white" required>
+                    <input id="quantity" type="number" placeholder="Quantity" class="w-full p-2.5 rounded border dark:bg-gray-600 dark:text-white" required>
+                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 p-2.5 rounded-lg font-bold">Save Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script type="module" src="src/home/home.js"></script>
+    <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+  <div class="mx-auto max-w-screen-xl text-center">
+      <a href="index.html" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+          <img src="assets/logos/logo.png" class="h-8 mr-3 rounded" alt="Logo">
+          Smart Study Hub    
+      </a>
+      <p class="my-6 text-gray-500 dark:text-gray-400">The University of Lahore - Web Engineering Assignment 02.</p>
+      <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+          <li><a href="src/pages/about.html" class="mr-4 hover:underline md:mr-6">About</a></li>
+          <li><a href="src/pages/contact.html" class="mr-4 hover:underline md:mr-6">Contact</a></li>
+          <li><a href="account/signup.html" class="mr-4 hover:underline md:mr-6">Sign Up</a></li>
+      </ul>
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2026 <a href="#" class="hover:underline">Smart Study Hub™</a>. All Rights Reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
