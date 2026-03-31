@@ -1,87 +1,112 @@
 📚 Smart Study Hub - Library Inventory System
 University of Lahore | Web Engineering (CS-312) | Assignment 02
- 📌 Project Overview
 
-This project is developed for the Web Engineering – Assignment 02 (Spring 2026) at The University of Lahore. It transforms a static library interface into a dynamic **Library Inventory System** using modern JavaScript (ES6+), DOM manipulation, and persistent storage.
+🔗 Project Links
+Live Demo: https://70148555-hue.github.io/Library-System/
 
-The system allows librarians and students to manage book records through a clean, responsive UI built with Tailwind CSS and Flowbite.
+GitHub Repository: https://github.com/70148555-hue/Library-System.git
 
- Key Features
+📌 Brief Project Overview
+The Smart Study Hub is a comprehensive Library Inventory System developed for the Spring 2026 session. This project demonstrates the transition from static web design to a fully functional CRUD (Create, Read, Update, Delete) application. It focuses on modern JavaScript ES6+ features, DOM manipulation, and responsive UI components to manage library records efficiently.
 
-  * Multiple Web Pages: Fully linked Home, About, Contact, Sign In, and Sign Up pages.
-  * CRUD Operations:
-      * Add: Create new book records via a modal form.
-      * Read: Display book cards dynamically from local data and storage.
-      * Delete: Remove books with immediate DOM synchronization.
-  * Search & Filter System**:
-      * Real-time search by Title or Author.
-      * Filter by "Top Rated" (Quantity \> 10).
-      * Sorting by Title or Quantity.
-  * Dark / Light Mode:
-      * Interactive toggle in the navigation bar.
-      * Persistent theme using `localStorage`.
-  * Functional Contact Form: Integrated with Formspree API for real-time email submissions.
-  * Advanced String Processing: Implements 10+ JavaScript string methods for data sanitization (trim, split, replace, etc.).
+✨ Key Features
+Dynamic Inventory Management: Add and delete book records with real-time UI updates.
+
+Advanced Search & Filter: A universal search bar that utilizes Object.keys() to filter by Title, Author, or ID.
+
+Persistent Dark Mode: A theme-switching toggle that remembers user preference using localStorage.
+
+Multi-Page Architecture: Fully synchronized Navigation and Footers across Home, About, Contact, and Auth pages.
+
+Data Sanitization: Implements 10+ JavaScript string methods (like .trim(), .toUpperCase(), and .padStart()) for professional data formatting.
+
+Responsive Design: Built with Tailwind CSS and Flowbite for a seamless experience on mobile, tablet, and desktop.
 
 🛠 Technologies Used
+Frontend Framework: Tailwind CSS (via CDN)
 
-  * **HTML5 & CSS3** (Tailwind CSS Framework)
-  * **JavaScript (ES6+)**: Modules, Classes, and Array Methods
-  * **DOM Manipulation**: Dynamic rendering and event handling
-  * **Formspree API**: Backend-less form handling
-  * **GitHub Pages**: Deployment and hosting
+Component Library: Flowbite
 
------
+Scripting: JavaScript ES6+ (Modules, Arrow Functions, Destructuring)
+
+Logic: Object CRUD Methods (Object.assign, Object.values, Object.keys)
+
+API Integration: Formspree (for Contact Form submissions)
+
+Deployment: GitHub Pages
 
 📁 Project Structure
+The project is organized to maintain a clear separation between assets, source logic, and authentication modules:
 
-/
-├── index.html                # Main Inventory Dashboard
-├── theme.js                  # Global Theme Persistence Logic
-├── assets/
+Plaintext
+/ (Root)
+├── index.html                  # Main Dashboard (Inventory UI)
+├── account/                    # Separate Authentication Module
+│   ├── signin.html             # Login Page
+│   └── signup.html             # Registration Page
+├── assests/                    # Media Assets (Images, Audios, PDFs)
+│   ├── images/
 │   └── logos/
-│       └── logo.png          # Standardized Project Logo
-├── src/
+├── src/                        # Source Code
+│   ├── theme.js                # Global Theme Persistence
 │   ├── constants/
-│   │   └── themeconstants.js # Theme keys and configuration
+│   │   └── themeconstants.js   # Exported Theme Keys
 │   ├── database/
-│   │   └── data.js           # Initial library data array
-│   ├── home/
-│   │   └── home.js           # Core CRUD & Search logic
-│   └── pages/
-│       ├── about.html        # Project information page
-│       └── contact.html      # Functional contact form
-└── account/
-    ├── signin.html           # User Sign-In interface
-    └── signup.html           # User Registration interface
-🌐 Live Demo
-(https://70148555-hue.github.io/Library-System/)
-🔗 GitHub Repository
-(https://github.com/70148555-hue/Library-System)
-📸 Screenshots
+│   │   └── data.js             # Initial Library Data Object
+│   └── pages/                  # Page-Specific Logic
+│       ├── about/
+│       │   └── about.html      # Educational Roadmap
+│       ├── contact/
+│       │   └── contact.html    # Functional Contact Form
+│       └── home/
+│           └── home.js         # Core CRUD & Search Logic
+🚀 How to Run the Project
+Clone the Repository:
 
-Home Page (Inventory Dashboard)
-![alt text](home.PNG)
-![alt text](home2.PNG)
+Bash
+git clone https://github.com/70148555-hue/Library-System.git
+Open in VS Code:
+Open the cloned folder in Visual Studio Code.
 
-About Pages
-![alt text](about-1.png)
-![alt text](about2.PNG)
+Launch Live Server:
+Right-click index.html and select "Open with Live Server".
 
- Contact Pages
-![alt text](contact1.PNG)
-![alt text](contact2.PNG)
-Authentication :
+Requirements:
+
+An active internet connection is required to load Tailwind CSS and Flowbite CDNs.
+
+Modern web browser (Chrome, Firefox, or Edge).
+
+📸 Project Screenshots
+1. Home Page (Inventory Dashboard)
+![alt text](home-1.PNG)
+![alt text](home2-1.PNG)
+
+2. About Page (Roadmap & Stats)
+![alt text](about-2.png)
+![alt text](about2-1.PNG)
+
+3. Contact Page
+![alt text](contact1-1.PNG)
+![alt text](contact2-1.PNG)
+
+4. Authentication
 Sign In
-![alt text](sigin.PNG)
+![alt text](sigin-1.PNG)
 
 Sign Up
-![alt text](signup.PNG)
-![alt text](signup2.PNG)
+![alt text](signup-1.PNG)
+![alt text](signup2-1.PNG)
 
-Project Folder Structure (VS Code)
-👨‍💻 Author
+5. VS Code Structure
+![alt text](FILE1.PNG)
+![alt text](FILE2.PNG)
 
-  * Student: fatima Naeem
-  * Program: BS Computer Science
-  * University: The University of Lahore
+👨‍💻 Author Information
+Student Name: Fatima Naeem
+SAP ID: 70148555
+Program: BS Computer Science (BSCS)
+
+University: The University of Lahore (UOL)
+
+Session: Spring 2026
